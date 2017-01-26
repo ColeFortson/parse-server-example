@@ -6,6 +6,7 @@ var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
 var S3Adapter = require('parse-server').S3Adapter;
 
+
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 
 if (!databaseUri) {
@@ -20,12 +21,12 @@ var api = new ParseServer({
   masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
   serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
   
-    filesAdapter: new S3Adapter(
-    "S3_ACCESS_KEY",
-    "S3_SECRET_KEY",
-    "S3_BUCKET",
-    {directAccess: true}
-  ),
+filesAdapter: new S3Adapter(
+"S3_ACCESS_KEY",
+"S3_SECRET_KEY",
+"S3_BUCKET",
+{directAccess: true}
+),
   
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
