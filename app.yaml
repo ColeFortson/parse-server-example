@@ -7,6 +7,13 @@ env_variables:
   APP_ID: <your-app-id>
   MASTER_KEY: <your-master-key>
   # --OPTIONAL--
+   FILE_KEY:
+   PARSE_SERVER_FILES_ADAPTER: './Files/S3Adapter.js'
+   S3_ACCESS_KEY: 
+   S3_SECRET_KEY: 
+   S3_BUCKET: kobaltnest
+   SERVER_URL: http://nest-parse.herokuapp.com/parse
+   
   # FILE_KEY: <your-file-key>
-  # PARSE_MOUNT: /parse
-  # CLOUD_CODE_MAIN:  
+ # PARSE_MOUNT: /parse
+  CLOUD_CODE_MAIN: S3Adapter
