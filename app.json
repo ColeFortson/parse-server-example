@@ -5,6 +5,16 @@
   "logo": "https://avatars0.githubusercontent.com/u/1294580?v=3&s=200",
   "keywords": ["node", "express", "parse"],
   "env": {
+"PARSE_SERVER_FILES_ADAPTER" : {
+	"module": "parse-server-s3-adapter",
+	"options": {
+	  "accessKey": "S3_ACCESS_KEY",
+	  "secretKey": "S3_SECRET_KEY",
+	  "bucket": "S3_BUCKET_NAME",
+	  "region": "S3_REGION"
+	}
+},
+
     "PARSE_MOUNT": {
       "description": "Configure Parse API route.",
       "value": "/parse"
