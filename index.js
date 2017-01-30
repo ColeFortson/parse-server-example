@@ -28,7 +28,7 @@ var api = new ParseServer({
     {
       directAccess: process.env.S3_DIRECT_ACCESS, //'true'
       region: process.env.S3_REGION, // 'eu-west-1'
-      bucketPrefix: process.env.S3_BUCKET_PREFIX,  'kobaltnest',
+      bucketPrefix: process.env.S3_BUCKET_PREFIX,  //'kobaltnest',
     }
   ),
   
