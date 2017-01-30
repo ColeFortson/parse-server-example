@@ -21,12 +21,18 @@ var api = new ParseServer({
   masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
   serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
   
-filesAdapter: new S3Adapter(
-"S3_ACCESS_KEY",
-"S3_SECRET_KEY",
-"S3_BUCKET",
-{directAccess: true}
-),
+   filesAdapter: new S3Adapter(
+    process.env.S3_ACCESS_KEY, // 'my key'
+    process.env.S3_SECRET_KEY, // 'my secret'
+    process.env.S3_BUCKET, // 'my bucket'
+    {
+      directAccess: process.env.S3_DIRECT_ACCESS, //'true'
+      region: process.env.S3_REGION, // 'eu-west-1'
+      bucketPrefix: process.env.S3_BUCKET_PREFIX,  'kobaltnest'
+      signatureVersion: 'v4'
+    }
+  ),
+  
   
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
